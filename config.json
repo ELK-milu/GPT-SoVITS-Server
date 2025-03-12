@@ -1,0 +1,10 @@
+{
+    "cnhubert_path":"./GPT_SoVITS/pretrained_models/chinese-hubert-base",
+    "bert_path":"./GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large",
+    "sovits_path":"./GPT_SoVITS/models/xxx_e8_s64.pth",
+    "gpt_path":"./GPT_SoVITS/models/xxx-e15.ckpt",
+    "default_refer_path":"./GPT_SoVITS/models/referaudio.wav",
+    "default_refer_text":"本台消息，国家主席习近平在中国龙年元宵节",
+    "default_refer_language":"zh",
+    "is_half":false
+}
