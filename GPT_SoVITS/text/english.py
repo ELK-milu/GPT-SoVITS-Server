@@ -16,6 +16,7 @@ word_tokenize = TweetTokenizer().tokenize
 from nltk import pos_tag
 
 current_file_path = os.path.dirname(__file__)
+os.environ['NLTK_DATA'] ="/workspace/LangChainChatChat/chatchat_data/data/nltk_data"
 CMU_DICT_PATH = os.path.join(current_file_path, "cmudict.rep")
 CMU_DICT_FAST_PATH = os.path.join(current_file_path, "cmudict-fast.rep")
 CMU_DICT_HOT_PATH = os.path.join(current_file_path, "engdict-hot.rep")
