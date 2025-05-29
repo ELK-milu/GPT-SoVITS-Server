@@ -165,6 +165,6 @@ cython_debug/
 #.idea/
 ffprobe.exe
 /audio_output/
-/GPT_SoVITS/models/
+/GPT_SoVITS/models/*
 /GPT_SoVITS/pretrained_models/chinese-hubert-base/
 /GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large/
