@@ -1,4 +1,6 @@
-import argparse 
+# 纯推理服务，没有分词提词，只有bert语义解析再推理
+
+ argparse
 import os
 import re
 import signal
