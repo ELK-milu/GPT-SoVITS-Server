@@ -183,7 +183,34 @@ def cut5(inp):
     opt = [item for item in mergeitems if not set(item).issubset(punds)]
     return "\n".join(opt)
 
+# 5字切依次
+# contributed by https://github.com/AI-Hobbyist/GPT-SoVITS/blob/main/GPT_SoVITS/inference_webui.py
+@register_method("cut6")
+def cut6(inp):
+    inp = inp.strip("\n")
+    inps = split(inp)
+    if len(inps) < 2:
+        return inp
+    opts = []
+    summ = 0
+    tmp_str = ""
+    for i in range(len(inps)):
+        summ += len(inps[i])
+        tmp_str += inps[i]
+        if summ > 15:
+            summ = 0
+            opts.append(tmp_str)
+            tmp_str = ""
+    if tmp_str != "":
+        opts.append(tmp_str)
+    #print(opts)
+    if len(opts) > 1 and len(opts[-1]) < 15:  ##如果最后一个太短了，和前一个合一起
+        opts[-2] = opts[-2] + opts[-1]
+        opts = opts[:-1]
+    opts = [item for item in opts if not set(item).issubset(punctuation)]
+    return "\n".join(opts)
+
 
 if __name__ == "__main__":
-    method = get_method("cut5")
-    print(method("你好，我是小明。你好，我是小红。你好，我是小刚。你好，我是小张。"))
+    method = get_method("cut6")
+    print(method("嗨大家好！我是杭州交投集团IP佼佼崽，我是交投的萌新，美好生活的先行者。智慧勇敢、心地善良，是我做事的行为准则。我头上戴的装饰是设计师给我独树一帜的亮点，通过层层递进的浪潮状数据，寓意着绽放美好、绽放智慧、绽放未来。我知道的事情可是很多的哦，大家尽情向我提问吧！"))
